@@ -4,7 +4,7 @@ version = '1.0.0'
 
 [addresses]
 # Testnet Address
-duel = "a7a691856c0f756c1844e2fe033ec425e49511f972887e0e8b2b5f136db5b29d"
+duel = ""
 
 
 [dependencies.AptosFramework]

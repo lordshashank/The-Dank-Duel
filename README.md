@@ -91,7 +91,7 @@ This is a game of Duel. You can play it with your friends. It is a game of luck 
 ## Getting Started
 
 You can try our dapp by installing martian wallet from [here](https://chrome.google.com/webstore/detail/martian-wallet-for-sui-ap/efbglgofoippbgcjepnhiblaibcnclgk)
-and then visiting the aptos explorer [here](https://explorer.aptoslabs.com/account/0xa7a691856c0f756c1844e2fe033ec425e49511f972887e0e8b2b5f136db5b29d/modules/run/game?network=testnet).
+and then visiting the aptos explorer [here](https://explorer.aptoslabs.com/account/0x5950de53571f9baad65f08d84201e5b010f0b41cdfdd28116deca0560ebbe77c/modules/run/game?network=testnet).
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
