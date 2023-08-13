@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Types, AptosClient } from "aptos";
+import { Address } from "cluster";
 
 const gameAddress =
   "0xf95cbc900b2f4bf53d915054218e6f7179e75c4426f93c4b7739600cda128096";
@@ -12,6 +13,8 @@ function App() {
   const [tokenAmount, setTokenAmount] = useState<string>("0");
   const [cardName, setCardName] = useState<string>("");
   const [cardDescription, setCardDescription] = useState<string>("");
+  const [player2, setPlayer2] = useState<string>("");
+  const [wager, setWager] = useState<string>("");
 
   /**
    *
@@ -49,6 +52,20 @@ function App() {
       function: `${gameAddress}::game::mint_token`,
       type_arguments: [],
       arguments: [amount],
+    };
+    console.log(payload);
+
+    const result = await window.martian.generateSignAndSubmitTransaction(
+      address,
+      payload
+    );
+    console.log(result);
+  };
+  const playDuel = async (player2: string, wager: string) => {
+    const payload = {
+      function: `${gameAddress}::game::play_duel`,
+      type_arguments: [],
+      arguments: [player2, wager],
     };
     console.log(payload);
 
@@ -110,6 +127,24 @@ function App() {
       <button onClick={() => mintCard(cardName, cardDescription)}>
         {" "}
         Click to Mint Card!{" "}
+      </button>
+      <input
+        type="text"
+        id="player2"
+        placeholder="Player 2"
+        value={player2}
+        onChange={(v) => setPlayer2(v.target.value)}
+      />
+      <input
+        type="text"
+        id="wager"
+        placeholder="Wager"
+        value={wager}
+        onChange={(v) => setWager(v.target.value)}
+      />
+      <button onClick={() => playDuel(player2, wager)}>
+        {" "}
+        Click to Play Duel!{" "}
       </button>
     </div>
   );
